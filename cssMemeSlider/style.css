@@ -1,6 +1,133 @@
-.block {
-	width: 1000px;
-	height: 600px;
-	background-color: #eb4343;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #6d6969;
+}
+
+.wrapper {
+	width: 56vw;
+	height: 78vh;
+	margin: 50px auto 0;
+	padding: 20px 0 20px 0;
+}
+
+.container {
+	background-color: #af2a2a;
+	width: 65vw;
+	height: 88vh;
 	margin: 0 auto;
+}
+
+.slider {
+	width: inherit;
+	height: inherit;
+	border-radius: 3%;
+	border: 2px solid rgb(2, 2, 2);
+	overflow: hidden;
+}
+
+.slides {
+	height: inherit;
+	width: inherit;
+	background-color: #101974;
+	opacity: 0;
+	transform: scale(1);
+	transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
+}
+
+img {
+	width: inherit; 
+	height: inherit;
+}
+
+.wrapper > input {
+	display: none;
+}
+
+.controls {
+	margin: -20px 0 0 0;
+	display: flex;
+	justify-content: end;
+}
+
+.controls label {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	margin: 0 5px;
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.8);
+	border-radius: 50%;
+	border: 1px solid #1d2832;
+	background-color: #fcfafa;
+	transition: background ease-in-out 0.5s;
+}
+
+.button {
+	width: 22px;
+	height: 22px;
+	background-color: transparent;
+	cursor: pointer;
+	margin-top: -4px;
+	margin-left: -4px;
+}
+
+.text {
+	/* margin-left: -20vw; */
+	margin-top: 20px;
+	display: none;
+}
+
+
+.controls label:hover,
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4) {
+	background-color: rgb(67, 61, 61);
+}
+
+#slide1:checked ~ .slider > .slide1 {
+	opacity: 1;
+}
+
+#slide2:checked ~ .slider > .slide2 {
+	opacity: 1;
+	margin-top: -78vh;
+	transform: scale(1);
+}
+
+#slide3:checked ~ .slider > .slide3{
+	opacity: 1;
+	margin-top: -156vh;
+	transform: scale(1);
+}
+
+#slide4:checked ~ .slider > .slide4{
+	opacity: 1;
+	margin-top: -234vh;
+	transform: scale(1);
+}
+
+
+
+
+#slide1:checked ~ .text1 {
+	display: block;
+}
+
+#slide2:checked ~ .text2 {
+	display: block;
+}
+
+#slide3:checked ~ .text3 {
+	display: block;
+}
+
+#slide4:checked ~ .text4 {
+	display: block;
 }
